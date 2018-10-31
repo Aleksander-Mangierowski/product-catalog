@@ -31,8 +31,7 @@ export default (state = initialState, action) => {
             };
 
         case POST_REVIEW_SUCCESS:
-            return {
-                reviews: action.payload,
+            return { ...state,
                 reviewsAreLoading: false
             };
 

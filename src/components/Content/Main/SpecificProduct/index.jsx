@@ -12,30 +12,28 @@ import Reviews from './Reviews/';
 const mapStateToProps = state => {
     return {
         reviews: state.reviews.reviews,
-        reviewsAreLoading: state.reviews.reviewsAreLoading
+        reviewsAreLoading: state.reviews.reviewsAreLoading,
+        isAuth: state.users.isAuth
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getReviews: url => dispatch(getReviews(url))
+        getReviews: id => dispatch(getReviews(id))
     };
 };
 
 
 
 class SpecificProduct extends Component {
+
     componentDidMount() {
         this.props.getReviews(this.props.match.params.id);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.props.getReviews(nextProps.match.params.id);
-    }
-
     render() {
         const productId = parseInt(this.props.match.params.id);
-        const { products, reviews } = this.props;
+        const { products, reviews, isAuth } = this.props;
 
         let product = {};
         [...products].some(item => {
@@ -97,7 +95,7 @@ class SpecificProduct extends Component {
                     </div>
                 </div>
 
-                <Reviews reviews={reviews} id={productId} />
+                <Reviews reviews={reviews} id={productId} isAuth={isAuth} />
             </React.Fragment>
         );
     }

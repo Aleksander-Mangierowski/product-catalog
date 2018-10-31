@@ -62,10 +62,9 @@ class Login extends Component {
 
     render() {
         const { isAuth } = this.props;
-        console.log('auth--', isAuth);
-        console.log('token', window.token);
-        
-        
+        if (isAuth) {
+            this.props.history.goBack();
+        }
         return (
 
             <React.Fragment>

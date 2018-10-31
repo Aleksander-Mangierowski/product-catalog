@@ -30,7 +30,7 @@ export const getReviews = id => {
 
         requestHandler({
             method: 'get',
-            url: 'reviews/' + id + '/',
+            url: 'reviews/' + id/*  + '/' */,
         }, getReviewsSuccess);
     };
 }
@@ -52,13 +52,14 @@ export const postReview = (id, data) => {
 
             dispatch({
                 type: POST_REVIEW_SUCCESS,
-                payload: response.data,
             });
+            
+            dispatch(getReviews(id));
         }
 
         requestHandler({
             method: 'post',
-            url: 'reviews/' + id + '/',
+            url: 'reviews/' + id/*  + '/' */,
             data
         }, postReviewSuccess);
     };

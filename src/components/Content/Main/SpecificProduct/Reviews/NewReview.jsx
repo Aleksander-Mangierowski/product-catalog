@@ -4,9 +4,6 @@ import styled from 'styled-components';
 
 import { postReview } from '../../../../../actions/reviews';
 
-const MAX_RATE = 5;
-const MIN_RATE = 1;
-
 class Review extends Component {
     constructor(props) {
         super(props);
@@ -23,14 +20,6 @@ class Review extends Component {
 
     submitReview = evt => {
         evt.preventDefault();
-
-        if (this.state.rate > MAX_RATE) {
-            this.setState({ rate: MAX_RATE });
-        }
-
-        if (this.state.rate < MIN_RATE) {
-            this.setState({ rate: MIN_RATE });
-        }
 
         this.props.dispatch(postReview(this.props.id, this.state));
 

@@ -53,9 +53,15 @@ class SignUp extends Component {
     };
 
     render() {
+        const { isAuth } = this.props;
+
+        if (isAuth) {
+            this.props.history.goBack();
+        }
+        
         return (
             <React.Fragment>
-                {this.props.isAuth &&
+                {isAuth &&
                     <Redirect to="/" push />
                 }
             

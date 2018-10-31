@@ -15,7 +15,9 @@ class Reviews extends Component {
                     {reviews}
                 </ul>
 
-                <NewReview id={this.props.id}/>
+                {this.props.isAuth &&
+                    <NewReview id={this.props.id} />
+                }
             </React.Fragment>
         );
     }

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default ({isAuth, signOut}) => {
     return (
         <Nav role="navigation">
-            <ul className="main-menu">
+            <MainMenu>
                 <li><Link to="/">Home</Link></li>
 
                 {isAuth ? 
@@ -16,8 +16,7 @@ export default ({isAuth, signOut}) => {
                         <li><Link to="/signup">SignUp</Link></li>
                     </React.Fragment>
                 }
-
-            </ul>
+            </MainMenu>
         </Nav>
     );
 }
@@ -25,4 +24,26 @@ export default ({isAuth, signOut}) => {
 
 const Nav = styled.nav`
     margin-left: auto;
+`;
+
+const MainMenu = styled.ul`
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 15px;
+    margin: 0;
+    li {
+        font-size: 1.5rem;
+        & + li {
+            margin-left: 20px;
+        }
+    }
+    a {
+        white-space: nowrap;
+        color: #444;
+        &:hover {
+            color: #2980b9;
+        }
+    }
 `;

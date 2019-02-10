@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { postReview } from '../../../../../actions/reviews';
+import { 
+    Col,
+    Button
+} from '../../../../common/styles';
 
 class Review extends Component {
     constructor(props) {
@@ -32,7 +36,7 @@ class Review extends Component {
 
     render() {
         return (
-            <div className="col">
+            <Col>
                 <ReviewtWrp onSubmit={this.submitReview}>
                     <textarea
                         name="text"
@@ -54,11 +58,9 @@ class Review extends Component {
                         required
                     />
 
-                    <button type="submit" className="btn">
-                        Review
-                    </button>
+                    <Button type="submit">Review</Button>
                 </ReviewtWrp>
-            </div>
+            </Col>
         );
     }
 }

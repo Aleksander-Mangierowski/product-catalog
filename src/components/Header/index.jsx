@@ -48,7 +48,7 @@ class Header extends Component {
                                     </li>
         
                                     <li>
-                                        <a href="https://www.linkedin.com/in/mangierowski-aleksander-392b3475/" target="_blank">
+                                        <a href="https://www.linkedin.com/in/aleksander-mangierowski-392b3475/" target="_blank">
                                             <i className="fab fa-linkedin"></i>
                                         </a>
                                     </li>

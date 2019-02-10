@@ -13,6 +13,7 @@ import {
     // LabeledCheckboxWrp,
     Header
 } from './styles';
+import { AuthButton } from './common/styles';
 
 const mapStateToProps = state => {
     return {
@@ -107,7 +108,7 @@ class Login extends Component {
                                 text="Remember me"/>
                         </LabeledCheckboxWrp> */}
                         
-                        <button className="btn btn-lg btn-block" type="submit">Sign In</button>
+                        <AuthButton type="submit">Sign In</AuthButton>
                     </AuthForm>
                 </AuthBackground>
             </React.Fragment>

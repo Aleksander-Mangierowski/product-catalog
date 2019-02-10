@@ -11,6 +11,7 @@ import {
     Input,
     Header
 } from './styles';
+import { AuthButton } from './common/styles';
 
 
 const mapStateToProps = state => {
@@ -104,7 +105,7 @@ class SignUp extends Component {
                             required
                         />
 
-                        <button className="btn btn-lg btn-block" type="submit">Sign Up</button>
+                        <AuthButton type="submit">Sign Up</AuthButton>
                     </AuthForm>
                 </AuthBackground>
             </React.Fragment>

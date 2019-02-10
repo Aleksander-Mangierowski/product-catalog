@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-
-
 export const colors = {
     headerBg: '#ccc',
     mainText: '#444',
